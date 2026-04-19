@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheckIcon, StoreIcon, CheckCircleIcon } from "./icons";
+import { ShieldCheckIcon, StoreIcon, CheckCircleIcon, ClockIcon } from "./icons";
 import { useInView } from "@/hooks/use-in-view";
 import { useSpotlight } from "@/hooks/use-spotlight";
 
@@ -8,18 +8,25 @@ const badges = [
   {
     icon: ShieldCheckIcon,
     label: "Compra Segura",
-    desc: "Pagamento protegido e nota fiscal",
+    desc: "Pagamento protegido e nota fiscal em todas as vendas.",
   },
   {
     icon: StoreIcon,
     label: "Loja Física",
-    desc: "Visite nosso espaço em Blumenau",
+    desc: "Visite nosso espaço em Blumenau. Retire ou receba em casa.",
   },
   {
     icon: CheckCircleIcon,
     label: "Garantia Real",
-    desc: "Todos os aparelhos com garantia",
+    desc: "Todos os aparelhos revisados, testados e com garantia.",
   },
+];
+
+const checks = [
+  { icon: CheckCircleIcon, text: "Aparelhos 100% testados antes da venda" },
+  { icon: ClockIcon, text: "Atendimento direto com especialista" },
+  { icon: ShieldCheckIcon, text: "Procedência verificada em cada produto" },
+  { icon: StoreIcon, text: "Retirada na loja ou entrega rápida" },
 ];
 
 export function TrustBlock() {
@@ -27,7 +34,13 @@ export function TrustBlock() {
   const { containerRef, handleMouseMove } = useSpotlight();
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-28" style={{ background: "#0c1e3a" }}>
+    <section
+      ref={ref}
+      className="relative py-20 sm:py-28"
+      style={{
+        background: "linear-gradient(180deg, #0c1e3a 0%, #0e2342 50%, #0c1e3a 100%)",
+      }}
+    >
       <div className="section-divider" />
 
       <div
@@ -51,7 +64,7 @@ export function TrustBlock() {
                 <p className="mt-4 font-[family-name:var(--font-display)] text-lg font-bold text-white">
                   {b.label}
                 </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-blue-200/40">
+                <p className="mt-1.5 text-sm leading-relaxed text-blue-200/55">
                   {b.desc}
                 </p>
               </div>
@@ -70,34 +83,33 @@ export function TrustBlock() {
               Desde 2013
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl leading-tight">
-              Loja física e
+              Mais de uma década
               <br />
-              atendimento real
+              de <span className="text-gradient-gold">confiança</span>
             </h2>
-            <p className="mt-4 leading-relaxed text-blue-200/45">
-              Atuamos no mercado há mais de uma década, atendendo clientes com
-              transparência, qualidade e suporte direto. Trabalhamos apenas com
-              aparelhos revisados e testados.
+            <p className="mt-4 leading-relaxed text-blue-200/60">
+              Atuamos no mercado há mais de 13 anos, atendendo clientes com
+              transparência, qualidade e suporte direto. Não é promessa — é histórico.
             </p>
           </div>
 
           <div className="space-y-2.5">
-            {[
-              "Loja física em funcionamento",
-              "Atendimento direto com especialista",
-              "Produtos com procedência verificada",
-              "Retirada na loja ou entrega",
-            ].map((text) => (
+            {checks.map((item, i) => (
               <div
-                key={text}
-                className="flex items-center gap-3 rounded-xl px-5 py-3.5 transition-all duration-300 hover:bg-white/[0.03]"
-                style={{ background: "rgba(255,255,255,0.02)" }}
+                key={item.text}
+                className={`flex items-center gap-3 rounded-xl px-5 py-3.5 transition-all duration-300 hover:bg-white/[0.04] ${
+                  inView ? "animate-fade-up" : "opacity-0"
+                }`}
+                style={{
+                  background: "rgba(255,255,255,0.02)",
+                  animationDelay: inView ? `${700 + i * 100}ms` : undefined,
+                }}
               >
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#4A9BD9]/10">
-                  <CheckCircleIcon className="h-3.5 w-3.5 text-[#4A9BD9]" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4A9BD9]/10">
+                  <item.icon className="h-3.5 w-3.5 text-[#4A9BD9]" />
                 </div>
-                <span className="text-[15px] font-medium text-blue-100/70">
-                  {text}
+                <span className="text-[15px] font-medium text-blue-100/75">
+                  {item.text}
                 </span>
               </div>
             ))}

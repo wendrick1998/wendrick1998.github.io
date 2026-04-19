@@ -29,7 +29,7 @@ export function CtaFinal() {
               <StarIcon key={i} className="h-3.5 w-3.5 text-amber-400 star-glow" />
             ))}
           </div>
-          <span className="text-xs text-blue-200/50">
+          <span className="text-xs text-blue-200/60">
             {STORE.reviews}+ clientes satisfeitos
           </span>
         </div>
@@ -39,7 +39,7 @@ export function CtaFinal() {
           <br />
           <span className="text-gradient-brand">que você quer acabar</span>
         </h2>
-        <p className="mt-5 text-lg text-blue-200/50">
+        <p className="mt-5 text-lg text-blue-200/60">
           Estoque limitado e rotativo. Fale agora e garanta o seu.
         </p>
 
@@ -55,7 +55,7 @@ export function CtaFinal() {
             <WhatsAppIcon className="relative h-6 w-6" />
             <span className="relative">Quero ver os modelos agora</span>
           </a>
-          <p className="text-sm text-blue-300/30">
+          <p className="text-sm text-blue-300/40">
             Resposta em minutos &bull; Sem compromisso
           </p>
         </div>

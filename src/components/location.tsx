@@ -8,15 +8,20 @@ export function Location() {
   const { ref, inView } = useInView();
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-28" style={{ background: "#0c1e3a" }}>
+    <section
+      ref={ref}
+      className="relative py-20 sm:py-28"
+      style={{
+        background: "linear-gradient(180deg, #0c1e3a 0%, #0e2240 50%, #0c1e3a 100%)",
+      }}
+    >
       <div className="section-divider" />
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className={`grid gap-8 sm:grid-cols-2 items-center ${inView ? "animate-fade-up" : "opacity-0"}`}>
-          {/* Map embed */}
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[4/3]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.2!2d-49.096!3d-26.903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzExLjAiUyA0OcKwMDUnNDUuNiJX!5e0!3m2!1spt-BR!2sbr!4v1"
+              src={STORE.mapsEmbed}
               className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-60"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -25,7 +30,6 @@ export function Location() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e3a] via-transparent to-transparent" />
           </div>
 
-          {/* Info */}
           <div
             className={`${inView ? "animate-fade-up" : "opacity-0"}`}
             style={{ animationDelay: inView ? "200ms" : undefined }}
@@ -38,7 +42,7 @@ export function Location() {
               <br />
               conhecer
             </h2>
-            <p className="mt-4 leading-relaxed" style={{ color: "rgba(191,219,254,0.5)" }}>
+            <p className="mt-4 leading-relaxed text-blue-200/60">
               Temos loja física em Blumenau. Venha ver os produtos pessoalmente ou entre em contato pelo WhatsApp.
             </p>
 
@@ -49,14 +53,14 @@ export function Location() {
                 </div>
                 <div>
                   <p className="font-medium text-white">{STORE.address}</p>
-                  <p className="text-sm" style={{ color: "rgba(191,219,254,0.5)" }}>
+                  <p className="text-sm text-blue-200/55">
                     {STORE.city} &bull; {STORE.cep}
                   </p>
                 </div>
               </div>
 
               <a
-                href="https://maps.app.goo.gl/iBluStoreBlumenau"
+                href={STORE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-5 py-2.5 text-sm font-medium text-white transition-all hover:border-white/15 hover:bg-white/[0.04]"

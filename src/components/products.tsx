@@ -1,7 +1,7 @@
 "use client";
 
 import { WHATSAPP_LINK } from "@/lib/constants";
-import { WhatsAppIcon } from "./icons";
+import { WhatsAppIcon, SmartphoneIcon, LaptopIcon, HeadphonesIcon, WrenchIcon } from "./icons";
 import { useInView } from "@/hooks/use-in-view";
 import { useSpotlight } from "@/hooks/use-spotlight";
 
@@ -9,34 +9,38 @@ const categories = [
   {
     title: "iPhones",
     description: "Modelos revisados e prontos para uso",
-    items: ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14"],
-    note: "Consulte disponibilidade pelo WhatsApp",
-    icon: "📱",
+    items: ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+    price: "A partir de R$ 1.499",
+    icon: SmartphoneIcon,
     span: "sm:col-span-2",
+    accent: "#4A9BD9",
   },
   {
     title: "iPad & MacBook",
-    description: "Tablets e notebooks Apple com garantia e procedência.",
+    description: "Tablets e notebooks Apple com garantia.",
     items: [],
-    note: null,
-    icon: "💻",
+    price: "Consulte valores",
+    icon: LaptopIcon,
     span: "",
+    accent: "#34A853",
   },
   {
     title: "Acessórios",
     description: "Capinhas, carregadores, fones e mais.",
     items: [],
-    note: null,
-    icon: "🎧",
+    price: "Consulte valores",
+    icon: HeadphonesIcon,
     span: "",
+    accent: "#FBBF24",
   },
   {
     title: "Assistência Técnica",
     description: "Manutenção especializada para dispositivos Apple.",
     items: [],
-    note: null,
-    icon: "🔧",
+    price: "Orçamento gratuito",
+    icon: WrenchIcon,
     span: "sm:col-span-2",
+    accent: "#F87171",
   },
 ];
 
@@ -45,7 +49,13 @@ export function Products() {
   const { containerRef, handleMouseMove } = useSpotlight();
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-28" style={{ background: "#091729" }}>
+    <section
+      ref={ref}
+      className="relative py-20 sm:py-28"
+      style={{
+        background: "linear-gradient(180deg, #0c1e3a 0%, #0f2440 50%, #0c1e3a 100%)",
+      }}
+    >
       <div className="section-divider" />
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -73,14 +83,19 @@ export function Products() {
             >
               <div className="relative z-10">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4A9BD9]/8 text-2xl">
-                    {cat.icon}
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl"
+                    style={{ background: `${cat.accent}12` }}
+                  >
+                    <div style={{ color: cat.accent }}>
+                      <cat.icon className="h-6 w-6" />
+                    </div>
                   </div>
                   <div>
                     <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
                       {cat.title}
                     </h3>
-                    <p className="text-sm text-blue-200/40">{cat.description}</p>
+                    <p className="text-sm text-blue-200/55">{cat.description}</p>
                   </div>
                 </div>
 
@@ -89,18 +104,20 @@ export function Products() {
                     {cat.items.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/[0.06] px-4 py-1.5 text-sm font-medium text-blue-200/70 transition-all duration-300 hover:border-[#4A9BD9]/30 hover:text-white hover:bg-[#4A9BD9]/8"
+                        className="rounded-full border border-white/[0.06] px-4 py-1.5 text-sm font-medium text-blue-200/70 transition-all duration-300 hover:border-[#4A9BD9]/30 hover:text-white hover:bg-[#4A9BD9]/10"
                       >
                         {item}
                       </span>
                     ))}
                   </div>
                 )}
-                {cat.note && (
-                  <p className="mt-4 text-sm italic text-blue-200/30">
-                    {cat.note}
-                  </p>
-                )}
+
+                <p
+                  className="mt-4 text-sm font-semibold"
+                  style={{ color: cat.accent }}
+                >
+                  {cat.price}
+                </p>
               </div>
             </div>
           ))}

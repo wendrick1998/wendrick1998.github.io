@@ -47,12 +47,6 @@ export function Footer() {
               >
                 Política de Privacidade
               </Link>
-              <Link
-                href="/termos"
-                className="block transition-colors hover:text-white"
-              >
-                Termos de Uso
-              </Link>
             </div>
           </div>
         </div>
@@ -63,8 +57,7 @@ export function Footer() {
             atendimento e a finalização das vendas são realizados via WhatsApp.
           </p>
           <p className="mt-3">
-            &copy; {new Date().getFullYear()} {STORE.name}. Todos os direitos
-            reservados.
+            &copy; 2025 {STORE.name}. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Como funciona a compra?",
-    a: "Você nos chama no WhatsApp, enviamos os modelos disponíveis com fotos e valores, tira suas dúvidas e finaliza a compra com total segurança. Simples assim.",
+    a: "Você nos chama no WhatsApp, enviamos os modelos disponíveis com fotos e valores, tira suas dúvidas e finaliza a compra com total segurança.",
   },
   {
     q: "Posso retirar na loja?",
@@ -30,13 +30,11 @@ const faqs = [
   },
 ];
 
-function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
+function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div
-      className="border-b border-white/[0.06] last:border-0"
-    >
+    <div className="border-b border-white/[0.06] last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-[#4A9BD9]"
@@ -60,7 +58,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
           opacity: open ? 1 : 0,
         }}
       >
-        <p className="pb-5 text-sm leading-relaxed" style={{ color: "rgba(191,219,254,0.55)" }}>
+        <p className="pb-5 text-sm leading-relaxed text-blue-200/60">
           {a}
         </p>
       </div>
@@ -95,7 +93,7 @@ export function FAQ() {
           }}
         >
           {faqs.map((faq, i) => (
-            <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
+            <FaqItem key={i} q={faq.q} a={faq.a} />
           ))}
         </div>
       </div>
