@@ -3,9 +3,11 @@
 import { STORE, WHATSAPP_LINK } from "@/lib/constants";
 import { MapPinIcon, WhatsAppIcon } from "./icons";
 import { useInView } from "@/hooks/use-in-view";
+import { useState } from "react";
 
 export function Location() {
   const { ref, inView } = useInView();
+  const [mapLoaded, setMapLoaded] = useState(false);
 
   return (
     <section
@@ -19,15 +21,25 @@ export function Location() {
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className={`grid gap-8 sm:grid-cols-2 items-center ${inView ? "animate-fade-up" : "opacity-0"}`}>
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[4/3]">
-            <iframe
-              src={STORE.mapsEmbed}
-              className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-60"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização iBlu Store"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e3a] via-transparent to-transparent" />
+          <div
+            className="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[4/3] cursor-pointer"
+            onClick={() => setMapLoaded(true)}
+          >
+            {mapLoaded ? (
+              <iframe
+                src={STORE.mapsEmbed}
+                className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-60"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização iBlu Store"
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0a1628]">
+                <MapPinIcon className="h-12 w-12 text-[#4A9BD9]/40 mb-3" />
+                <p className="text-sm text-blue-200/40">Toque para carregar o mapa</p>
+              </div>
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e3a] via-transparent to-transparent pointer-events-none" />
           </div>
 
           <div

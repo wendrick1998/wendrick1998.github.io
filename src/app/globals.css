@@ -20,6 +20,20 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.animate-fade-up,
+.animate-fade-in,
+.animate-scale-in {
+  will-change: transform, opacity;
+}
+
 /* ══════════════════════════════════════════
    ANIMATIONS
    ══════════════════════════════════════════ */
@@ -133,8 +147,6 @@
     rgba(30, 95, 138, 0.05),
     rgba(74, 155, 217, 0.2)
   );
-  background-size: 300% 300%;
-  animation: aurora 8s ease infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -216,7 +228,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: text-shimmer 6s linear infinite;
 }
 
 .text-gradient-gold {
@@ -240,8 +251,6 @@
     rgba(74, 155, 217, 0.15),
     transparent
   );
-  background-size: 200% 100%;
-  animation: text-shimmer 8s linear infinite;
 }
 
 /* ══════════════════════════════════════════

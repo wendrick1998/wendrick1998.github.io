@@ -14,7 +14,7 @@ export function CtaFinal() {
       style={{ background: "#060B18" }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(30,95,138,0.2),transparent_60%)]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[150px] animate-glow-pulse" style={{ background: "rgba(30,95,138,0.1)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[150px]" style={{ background: "rgba(30,95,138,0.1)" }} />
 
       <div className="noise absolute inset-0 pointer-events-none" />
 

@@ -19,12 +19,9 @@ export function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#060B18] via-[#0a1a35] to-[#0c1e3a]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(30,95,138,0.35),transparent)]" />
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[150px] animate-glow-pulse" style={{ background: "rgba(30,95,138,0.08)" }} />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[130px] animate-glow-pulse" style={{ background: "rgba(74,155,217,0.06)", animationDelay: "2s" }} />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: "rgba(30,95,138,0.08)" }} />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[130px]" style={{ background: "rgba(74,155,217,0.06)" }} />
       </div>
-
-      <div className="absolute top-20 left-[10%] w-32 h-32 border border-white/[0.03] rounded-full animate-float" />
-      <div className="absolute bottom-32 right-[12%] w-24 h-24 border border-white/[0.03] rounded-2xl rotate-12 animate-float" style={{ animationDelay: "2s" }} />
 
       <div className="noise absolute inset-0 pointer-events-none" />
 
@@ -90,9 +87,9 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <div className="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center pt-1.5">
-          <div className="w-1 h-2 rounded-full bg-white/30" style={{ animation: "fade-up 1.5s ease-in-out infinite" }} />
+          <div className="w-1 h-2 rounded-full bg-white/30" style={{ animation: "fade-up 1.5s ease-in-out 3" }} />
         </div>
       </div>
     </section>
