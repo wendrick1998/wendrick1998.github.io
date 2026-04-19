@@ -30,6 +30,7 @@ export function Location() {
                 src={STORE.mapsEmbed}
                 className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-60"
                 loading="lazy"
+                allow="fullscreen"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização iBlu Store"
               />

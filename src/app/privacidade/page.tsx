@@ -14,21 +14,21 @@ export default function Privacidade() {
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <Link
           href="/"
-          className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+          className="text-sm text-blue-300/60 hover:text-white transition-colors"
         >
           &larr; Voltar ao site
         </Link>
 
-        <h1 className="mt-6 text-3xl font-bold text-gray-900">
+        <h1 className="mt-6 text-3xl font-bold text-white">
           Política de Privacidade
         </h1>
-        <p className="mt-2 text-sm text-gray-500">
-          Última atualização: {new Date().toLocaleDateString("pt-BR")}
+        <p className="mt-2 text-sm text-blue-200/45">
+          Última atualização: 19/04/2025
         </p>
 
-        <div className="mt-8 space-y-6 text-gray-700 leading-relaxed">
+        <div className="mt-8 space-y-6 text-blue-100/70 leading-relaxed">
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               1. Informações que coletamos
             </h2>
             <p className="mt-2">
@@ -39,7 +39,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               2. Uso das informações
             </h2>
             <p className="mt-2">
@@ -50,7 +50,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               3. Cookies e tecnologias
             </h2>
             <p className="mt-2">
@@ -60,7 +60,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               4. Compartilhamento de dados
             </h2>
             <p className="mt-2">
@@ -70,7 +70,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               5. Contato via WhatsApp
             </h2>
             <p className="mt-2">
@@ -82,7 +82,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               6. Seus direitos
             </h2>
             <p className="mt-2">
@@ -93,7 +93,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               7. Consentimento
             </h2>
             <p className="mt-2">
@@ -103,7 +103,7 @@ export default function Privacidade() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               8. Contato
             </h2>
             <p className="mt-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/use-in-view";
-import { useState } from "react";
+import { useState, useId } from "react";
 
 const faqs = [
   {
@@ -32,11 +32,15 @@ const faqs = [
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  const id = useId();
+  const answerId = `faq-${id}`;
 
   return (
     <div className="border-b border-white/[0.06] last:border-0">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={answerId}
         className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-[#4A9BD9]"
       >
         <span className="font-[family-name:var(--font-display)] text-[15px] font-semibold text-white pr-4">
@@ -52,6 +56,8 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         </span>
       </button>
       <div
+        id={answerId}
+        role="region"
         className="overflow-hidden transition-all duration-300"
         style={{
           maxHeight: open ? "200px" : "0",

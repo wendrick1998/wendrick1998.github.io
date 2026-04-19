@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export function useCounter(end: number, duration = 2000, start = 0, active = true) {
-  const [count, setCount] = useState(start);
+  const [count, setCount] = useState(end);
 
   useEffect(() => {
     if (!active) return;
