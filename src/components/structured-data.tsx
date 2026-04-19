@@ -6,7 +6,7 @@ export function StructuredData() {
     "@type": "LocalBusiness",
     name: STORE.name,
     description: "Loja de iPhones originais em Blumenau. Aparelhos revisados, com garantia e atendimento via WhatsApp.",
-    url: "https://wendrick1998.github.io/iblu-landing/",
+    url: "https://wendrick1998.github.io/",
     telephone: "+55" + STORE.phone.replace(/\D/g, ""),
     address: {
       "@type": "PostalAddress",
@@ -34,7 +34,7 @@ export function StructuredData() {
       closes: "18:00",
     },
     priceRange: "$$",
-    image: "https://wendrick1998.github.io/iblu-landing/og-image.png",
+    image: "https://wendrick1998.github.io/og-image.png",
     sameAs: [`https://www.instagram.com/${STORE.instagram}`],
   };
 

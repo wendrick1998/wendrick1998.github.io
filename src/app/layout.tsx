@@ -14,7 +14,7 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://wendrick1998.github.io/iblu-landing";
+const siteUrl = "https://wendrick1998.github.io";
 
 export const metadata: Metadata = {
   title: "iBlu Store — iPhones Originais com Garantia e Loja Física | Blumenau",
