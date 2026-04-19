@@ -14,6 +14,8 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteUrl = "https://wendrick1998.github.io/iblu-landing";
+
 export const metadata: Metadata = {
   title: "iBlu Store — iPhones Originais com Garantia e Loja Física | Blumenau",
   description:
@@ -26,13 +28,38 @@ export const metadata: Metadata = {
     "iPhone garantia",
     "iBlu Store",
     "assistência técnica iPhone",
+    "iPhone seminovo Blumenau",
+    "assistência Apple Blumenau",
   ],
+  metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "iBlu Store — iPhones Originais com Garantia e Loja Física",
+    title: "iBlu Store — iPhones Originais com Garantia | Blumenau",
     description:
       "Atendimento rápido via WhatsApp. Aparelhos revisados. Compra segura. Loja física em Blumenau desde 2013.",
     type: "website",
     locale: "pt_BR",
+    url: siteUrl,
+    siteName: "iBlu Store",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "iBlu Store — iPhones Originais em Blumenau",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iBlu Store — iPhones Originais | Blumenau",
+    description: "Aparelhos revisados, com garantia e atendimento via WhatsApp.",
+    images: [`${siteUrl}/og-image.png`],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
   },
   robots: { index: true, follow: true },
 };
